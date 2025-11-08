@@ -1,0 +1,160 @@
+/* styles.css - فقط CSS جداگانه، بدون JS */
+
+/* متغیرهای پایه */
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --accent: #2b6cb0;
+  --accent-dark: #27619e; /* رنگ تیره‌تر برای hover */
+  --text: #1f2937;
+  --muted: #6b7280;
+  --radius: 12px;
+  --gap: 18px;
+  --container-width: 900px;
+  --transition: 200ms ease;
+  --font-family: "Arial", "Helvetica", sans-serif;
+}
+
+/* ریست و پایه */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* کانتینر مرکزی */
+.container {
+  width: calc(100% - 32px);
+  max-width: var(--container-width);
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+/* هدر */
+.site-header {
+  background: linear-gradient(90deg, rgba(43, 108, 176, 0.12), rgba(43, 108, 176, 0.04));
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  flex-wrap: wrap;
+}
+.name-block h1 {
+  margin: 0 0 6px 0;
+  font-size: 1.6rem;
+}
+.role {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* تماس */
+.contact p {
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.contact a:hover {
+  color: var(--accent-dark);
+}
+
+/* کارت‌ها (بخش‌ها) */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+.card h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+/* لیست مهارت‌ها */
+.skills-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+.skills-list li {
+  background: linear-gradient(180deg, rgba(43, 108, 176, 0.08), rgba(43, 108, 176, 0.03));
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* لینک‌ها داخل مقالات */
+article a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(43, 108, 176, 0.15);
+  transition: all var(--transition);
+}
+article a:hover {
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
+
+/* فوتر */
+.site-footer {
+  padding: 12px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ریسپانسیو */
+@media (min-width: 880px) {
+  .header-inner {
+    display: flex;
+  }
+  .contact {
+    text-align: left;
+  }
+  body[dir="rtl"] .contact {
+    text-align: right;
+  }
+}
+
+/* صفحات کوچک */
+@media (max-width: 479px) {
+  .name-block h1 {
+    font-size: 1.2rem;
+  }
+  .card {
+    padding: 12px;
+  }
+  .skills-list {
+    gap: 8px;
+  }
+}
+
+/* دسترس‌پذیری: فوکوس لینک‌ها */
+a:focus {
+  outline: 3px solid rgba(43, 108, 176, 0.12);
+  outline-offset: 2px;
+}

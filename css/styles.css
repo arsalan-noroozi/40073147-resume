@@ -1,5 +1,3 @@
-/* styles.css - فقط CSS جداگانه، بدون JS */
-
 /* متغیرهای پایه */
 :root {
   --bg: #f6f7fb;
@@ -158,3 +156,4 @@ a:focus {
   outline: 3px solid rgba(43, 108, 176, 0.12);
   outline-offset: 2px;
 }
+
